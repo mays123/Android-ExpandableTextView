@@ -255,6 +255,13 @@ public class ExpandableTextView extends TextView
 
     //region public getters and setters
 
+
+    public void setExpanded(boolean expanded) {
+        this.expanded = expanded;
+    }
+
+
+
     /**
      * Sets the duration of the expand / collapse animation.
      * @param animationDuration duration in milliseconds.
