@@ -184,10 +184,11 @@ public class ExpandableTextView extends TextView
             return true;
         }else{
             notifyOnEndExpand();
+            return true;
         }
 
 
-        return false;
+//        return false;
     }
 
     /**
@@ -251,9 +252,10 @@ public class ExpandableTextView extends TextView
             return true;
         }else {
             notifyOnEndCollapse();
+            return true;
         }
 
-        return false;
+//        return false;
     }
 
     //endregion
