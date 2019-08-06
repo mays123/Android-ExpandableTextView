@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
 
 def fullVersion = '1.0.5'
 
@@ -9,7 +8,6 @@ version = fullVersion
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.2"
 
     defaultConfig {
         minSdkVersion 16
@@ -32,10 +30,10 @@ repositories {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:support-annotations:25.3.1'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:support-annotations:25.3.1'
 
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
 }
 
 task sourcesJar(type: Jar) {
@@ -89,37 +87,6 @@ install {
                     name 'Cliff Ophalvens'
                     email 'cliff.ophalvens@gmail.com'
                 }
-            }
-        }
-    }
-}
-
-bintray {
-    user = "${bintray_user}"
-    key = "${bintray_apikey}"
-    configurations = ['archives']
-
-    dryRun = false
-
-    pkg {
-        repo = 'maven'
-        name = 'android-expandabletextview'
-        userOrg = "blogcat"
-        licenses = ['Apache-2.0']
-        websiteUrl = 'https://github.com/Blogcat/Android-ExpandableTextView'
-        issueTrackerUrl = 'https://github.com/Blogcat/Android-ExpandableTextView/issues'
-        vcsUrl = 'https://github.com/Blogcat/Android-ExpandableTextView.git'
-        githubRepo = 'Blogcat/Android-ExpandableTextView'
-        githubReleaseNotesFile = 'CHANGELOG.md'
-
-        version {
-            name = fullVersion
-            released  = new Date()
-            vcsTag = fullVersion
-
-            gpg {
-                sign = true
-                passphrase = "${bintray_gpg_password}"
             }
         }
     }

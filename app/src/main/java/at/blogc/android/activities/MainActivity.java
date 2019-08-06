@@ -85,15 +85,25 @@ public class MainActivity extends AppCompatActivity
         expandableTextView.addOnExpandListener(new ExpandableTextView.OnExpandListener()
         {
             @Override
-            public void onExpand(@NonNull final ExpandableTextView view)
+            public void onStartExpand(@NonNull final ExpandableTextView view)
             {
                 Log.d(TAG, "ExpandableTextView expanded");
             }
 
             @Override
-            public void onCollapse(@NonNull final ExpandableTextView view)
+            public void onStartCollapse(@NonNull final ExpandableTextView view)
             {
                 Log.d(TAG, "ExpandableTextView collapsed");
+            }
+
+            @Override
+            public void onEndExpand(@NonNull ExpandableTextView view) {
+
+            }
+
+            @Override
+            public void onEndCollapse(@NonNull ExpandableTextView view) {
+
             }
         });
     }
