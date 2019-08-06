@@ -182,7 +182,10 @@ public class ExpandableTextView extends TextView
                     .start();
 
             return true;
+        }else{
+            notifyOnEndExpand();
         }
+
 
         return false;
     }
@@ -246,6 +249,8 @@ public class ExpandableTextView extends TextView
                     .start();
 
             return true;
+        }else {
+            notifyOnEndCollapse();
         }
 
         return false;
